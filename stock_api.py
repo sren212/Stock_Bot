@@ -36,12 +36,12 @@ def candlestick(values):
             low = value
     return [open, close, high, low]
 
-api_key = 'cthi3h1r01qtho2pjeo0cthi3h1r01qtho2pjeog'
+key_file = open("key_file.txt", "r")
+api_key = key_file.readline()
 
 # look up symbol and get response
 symbol = "AMC"
 url = f'https://finnhub.io/api/v1/quote?symbol={symbol}&token={api_key}'
-print(url)
 file = open("data.txt", "a")
 length = 60
 interval = 5
